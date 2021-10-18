@@ -114,6 +114,10 @@ if __name__ == '__main__':
     generate_centroids(X, k)
     # En este punto tenemos que hacer las predicciones
     print("Las predicciones para las instancias del CSV son las siguientes")
-    list = np.array(predict_cluster())
-    np.savetxt("Predictions.txt",list)
-    print("Predicciones guardadas en el fichero Predictions, esta en formato float, perdon las molestias")
+    list =predict_cluster()
+    list2 = pd.read_csv("dummy_original_200.csv")
+    list2["Asigned Cluster"] = list
+    list2.drop(["Sentiment"],axis=1,inplace=True)
+    list2 = list2.loc[:, ~list2.columns.str.contains('^Unnamed')]
+    list2.to_csv("Prediction.csv",index=False)
+    print("Predicciones guardadas en el fichero Predictions, es una tabla donde ver la entidad y el cluster asignado.")
