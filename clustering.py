@@ -100,7 +100,7 @@ def check_if_centroids_are_defined():
         generate_centroids(X, k)
         print("Centroides generados y calculados de forma satisfactoria!")
     else:
-        print("Los centroides estan generados, si deseas generarlos de nuevo, pon el argumento --f en la ejecucion del script ")
+        print("Los centroides están generados, si deseas generarlos de nuevo, pon el argumento --f en la ejecución del script ")
     centroids = load('Centroids.npy')
 
     return centroids.tolist()
