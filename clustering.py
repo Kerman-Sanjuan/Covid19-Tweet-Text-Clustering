@@ -6,9 +6,8 @@ import random
 import os
 
 
-df = pd.read_csv('moritz.csv')
-df_X = df.drop(columns={'label', 'OriginalTweet',
-                        'CleanOriginalTweet'}, axis=1, inplace=False)
+df = pd.read_csv('dummy_embedding.csv')
+df_X = df
 N = 1
 k = 5
 n_iter = 150
